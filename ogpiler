@@ -1,0 +1,15 @@
+#!/bin/sh
+# ogpiler v0.0.0
+
+set -e
+
+[ "$1" == "-o" ] || (echo 'First argument must be -o'; exit 1)
+outputfile="$2"
+inputfile="$3"
+test -f "$inputfile" || (echo 'The input file must exist.'; exit 1)
+
+f="$inputfile"
+og -f -q -n "$f" 1>/dev/null
+chmod -x "${f%.*}.go"
+go2cpp "${f%.*}.go" > "${f%.*}.cpp"
+rm -f "${f%.*}.go"
