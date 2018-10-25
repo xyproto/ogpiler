@@ -40,6 +40,7 @@ auto main() -> int
 
 ## General info
 
+Note that this is alpha quality software, at an early stage!
+
 * Version: 0.0.0
 * License: MIT
-* Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
